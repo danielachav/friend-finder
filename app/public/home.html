@@ -1,30 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Example App - Home</title>
-</head>
-<body>
- 
-    <!-- Uses built-in `if` helper. -->
-  {{#if showTitle}}
-    <h1>Home</h1>
-  {{/if}}
- 
-    <!-- Calls `foo` helper, overridden at render-level. -->
-    <p>{{foo}}</p>
- 
-    <!-- Calls `bar` helper, defined at instance-level. -->
-    <p>{{bar}}</p>
+    <meta charset="UTF-8">
+    <title>Friends Page</title>
 
-
-
-
-    <form action="/" method="POST">
-        <textarea type="text" name="task"></textarea>
+    <link rel="stylesheet" type="text/css" href="style.css">
     
-        <button type="submit">Submit</button>
-    </form>
- 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://use.fontawesome.com/0bf9ac1b8c.js"></script>
+
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body id="background">
+
+    <div class="container">
+
+        <div class="jumbotron">
+
+            <h1 class="text-center"> Friend Finder</h1>
+            <hr>
+            <h2 class="text-center">Looking for a new and special friend thats compatible with you?</h2>
+            <h2 class="text-center">Fill out the survey to find the perfect friend</h2>
+            <br>
+
+            <div class="text-center">
+                <a href="./survey.html"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span>Start Survey</button></a>
+            </div>
+
+        </div>
+
+
+    </div>
+
 </body>
 </html>

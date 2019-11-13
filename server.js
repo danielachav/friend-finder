@@ -1,57 +1,21 @@
-// Dependencies
 var express = require('express');
 var path = require('path');
- 
+var friends = require('./app/data/friends.js');
+
 var app = express();
+var PORT = process.env.PORT || 3000;
 
-// Set the port of our application
-// process.env.PORT lets the port be set by Heroku
-var PORT = process.env.PORT || 8080;
+app.use(express.static('app/public'));
 
-// Sets up the Express App to handle data parsing
-app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.text());
+app.use(express.json({ type: 'application/vnd.api+json' }));
 
+require('./app/routing/apiRoutes.js')(app);
+require('./app/routing/htmlRoutes.js')(app);
 
-// Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
-    // Log (server-side) when our server has started
-    console.log("Server listening on: http://localhost:" + PORT);
-  });
-
-
-// Data
-
-var data = {
-    surveyQuestions:[]
-}
-
-var surveyQuestions = [
-    {
-      questionOne: "What is your favorite color?",
-      answer: true,
-      score: 4
-    }, {
-      questionTwo: "How many siblings do you have?",
-      answer: true,
-      score: 10
-    }, 
-  ];
-  
-
-for (var i = 0; i < surveyQuestions.length; i++) {
-    var data = surveyQuestions[index];
-    
-}
-
-
-//Routes
-
-app.get("/surveyQuestions", function(req, res) {
-    res.render("index", surveyQuestions.filter(item =>
-        item.surveyQuestions === true));
-  });
-  
+app.listen(process.env.PORT || 3000);
 
 
 
